@@ -23,11 +23,11 @@ on:
       force_github_runners:
         description: "Force GitHub-hosted runners (skip self-hosted even if online)"
         type: boolean
-        default: false
+        default: true
       dry_run:
         description: "Build/sign/notarize without uploading release artifacts or debug symbols"
         type: boolean
-        default: false
+        default: true
 concurrency:
   group: release-app-${{ github.event_name }}-${{ github.event.inputs.commit_hash || github.sha }}
   cancel-in-progress: true
